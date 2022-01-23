@@ -9,7 +9,11 @@ class App extends React.Component {
 		this.state = {
 		  url: '',
 		  boxes: []
-		}
+		};
+		Object.defineProperty(this, 'backendUrl', {
+			value: 'https://face-recognition-backend-rb.herokuapp.com/image?input=',
+			writable: false
+		});
 	}
 
 	calculateFaceLocation = (data) => {
@@ -38,7 +42,7 @@ class App extends React.Component {
 			if (!url) return;
 			await this.setState({url: url, boxes: []});
 			document.getElementById('url').value = '';
-			const response = await fetch('http://localhost:3000/image?input=' + this.state.url,
+			const response = await fetch(this.backendUrl + this.state.url,
 				{
 				method: 'get',
 				headers: {'Content-Type': 'application/json'}
