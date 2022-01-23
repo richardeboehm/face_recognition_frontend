@@ -1,0 +1,19 @@
+#outerContainer {
+	display: flex;
+	justify-content: center;
+}
+
+#imageAndBoxes {
+	position: absolute;
+}
+
+#image {
+	border-radius: 25px;
+	box-shadow:  3px -1px 4px 5px #333;
+}
+
+.bounding-box {
+	position: absolute;
+	box-shadow: 0 0 0 2px #149df2 inset;
+	border-radius: 15px;
+}
